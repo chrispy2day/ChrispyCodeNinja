@@ -14,20 +14,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>My App</title>
-    <meta name="description" content="My App description">
+    <title>Chrispy Code Ninja</title>
+    <meta name="description" content="Developer notes, throughts, training and other technology related goodness from the Chrispy Code Ninja... and perhaps a few non-technology related things as well.">
 
     <link rel="icon" href="/images/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Trade+Winds" rel="stylesheet">
 
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
 
     <!-- See https://goo.gl/qRE0vM -->
-    <meta name="theme-color" content="#3f51b5">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="My App">
+    <meta name="application-name" content="Chrispy Code Ninja">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -92,20 +94,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </script>
 
-    <link rel="import" href="/src/my-app.html">
+    <link rel="import" href="/src/code-ninja-app.html">
 
     <style>
       body {
         margin: 0;
-        font-family: 'Roboto', 'Noto', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         line-height: 1.5;
         min-height: 100vh;
         background-color: #eeeeee;
       }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Trade Winds', cursive;
+      }
     </style>
   </head>
   <body>
-    <my-app></my-app>
+    <code-ninja-app></code-ninja-app>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>

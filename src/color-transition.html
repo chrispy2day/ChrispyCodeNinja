@@ -1,0 +1,24 @@
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects-behavior.html">
+
+<script>
+  Polymer.AppLayout.registerEffect('color-transition', {
+      setUp: function(config) {
+        // the effect's config is passed to the setUp.
+        this._fxResizeLogo = { logo: Polymer.dom(this).querySelector('[color]') };
+      },
+   
+      run: function(progress) {
+         // the progress of the effect
+         // progress as a percentage string
+         var progString = (progress * 100) + "%";
+         var colorString = "hsla(0, 0%," + progString + ", 1)";
+
+         this._fxResizeLogo.logo.style.color = colorString;
+      },
+   
+      tearDown: function() {
+         // clean up and reset of states
+         delete this._fxResizeLogo;
+      }
+    });
+</script>

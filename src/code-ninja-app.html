@@ -1,0 +1,206 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-left-animation.html">
+
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+
+<link rel="import" href="color-transition.html">
+<link rel="import" href="my-icons.html">
+
+<dom-module id="code-ninja-app">
+
+  <template>
+
+    <style>
+
+      :host {
+        display: block;
+        --app-primary-color: #990000;
+        --app-secondary-color: black;
+      }
+
+      app-header {
+        background-color: var(--app-primary-color);
+        color: #fff;
+        font-family: 'Trade Winds', cursive;
+        --paper-tabs-selection-bar-color: rgba(0, 0, 0, .5);
+
+        --app-header-background-front-layer: {
+          background-image: url('/images/ninja.png'), url('/images/asianBellBackground.jpg');
+          background-position: 20px bottom, center top;
+          background-size: auto 75%, auto auto;
+          background-repeat: no-repeat, no-repeat;
+        };
+        --app-header-background-rear-layer: {
+            background-image: url('/images/ninja.png');
+            background-position: 20px 60px;
+            background-size: 30px auto;
+            background-repeat: no-repeat;
+        };
+      }
+
+      .link {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      paper-tabs h2 {
+          margin: 0 0 0 30px;
+          padding: 0 0 0 1.5em;
+      }
+
+      app-drawer {
+        z-index: 1;
+        --app-drawer-content-container: {
+          background-color: #990000;
+          color: #ffffff;
+          margin-top:10px;
+        }
+      }
+
+      .drawer-contents {
+        height: 100%;
+        overflow-y: auto;
+      }
+
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    <!-- Header -->
+    <app-header-layout>
+        <app-header role="navigation" style="height: 300px;" condenses fixed 
+          effects="blend-background parallax-background color-transition"
+          effects-config='{"color-transition": {}}'>
+            <app-toolbar style="height: 64px;" color>
+                <!-- Tab nav on large display -->
+                <paper-tabs selected="{{page}}" attr-for-selected="name" bottom-item hidden$="{{!wideLayout}}">
+                  <h2>Chrispy Code Ninja</h2>
+                  <template is="dom-repeat" items="{{pages}}" as="p">
+                    <paper-tab name="[[p.name]]" link>
+                      <a href="/[[p.name]]" class="link" tabindex="-1">[[p.title]]</a>
+                    </paper-tab>
+                  </template>
+                </paper-tabs>
+
+                <!-- drawer toggle on small display-->
+                <div main-title hidden$="{{wideLayout}}" style="width: 100%">Chrispy Code Ninja</div>
+                <paper-icon-button icon="menu" on-tap="toggleDrawer" hidden$="{{wideLayout}}">></paper-icon-button>
+            </app-toolbar>
+        </app-header>
+    </app-header-layout>
+
+    <!-- Small screen drawer nav -->
+    <app-drawer id="drawer" align="right" swipe-open hidden$="{{wideLayout}}">
+      <div class="drawer-contents">
+        <template is="dom-repeat" id="menu" items="[[pages]]" as="p">
+          <div><a href="/[[p.name]]" class="link" tabindex="-1">[[p.title]]</a></div>
+        </template>
+      </div>
+    </app-drawer>
+
+    <!-- Animated Content Pages -->
+    <neon-animated-pages selected='[[page]]'
+                     attr-for-selected='name'
+                     entry-animation='slide-from-right-animation'
+                     exit-animation='slide-left-animation'>
+      <neon-animatable name='my-view1'><my-view1></my-view1></neon-animatable>
+      <neon-animatable name='my-view2'><my-view2></my-view2></neon-animatable>
+      <neon-animatable name='my-view3'><my-view3></my-view3></neon-animatable>
+      <neon-animatable name='my-view404'><my-view3></my-view3></neon-animatable>
+    </neon-animated-pages>
+
+    <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
+
+  </template>
+
+  <script>
+
+    var navItems = [{
+            name: "my-view1",
+            title: "Home"
+            }, {
+            name: "my-view2",
+            title: "Bio"
+            }, {
+            name: "my-view3",
+            title: "Writings"
+            }];
+
+    Polymer({
+
+      is: 'code-ninja-app',
+
+      properties: {
+        pages: {
+          type: Array,
+          value: navItems,
+          readOnly: true,
+          notify: true
+        },
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        }
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'my-view1';
+      },
+
+      _pageChanged: function(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl(page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _showPage404: function() {
+        this.page = 'my-view404';
+      },
+
+      toggleDrawer: function (){
+        this.$.drawer.toggle();
+      }
+
+    });
+
+  </script>
+
+</dom-module>
