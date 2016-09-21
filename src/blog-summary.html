@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="shared-styles.html">
+<!--<script type="text/javascript" src="../node_modules/jquery/dist/jquery.slim.min.js"></script>-->
+
+<dom-module id="blog-summary">
+  <template>
+      <style>
+
+      </style>
+
+      <h2>Blog Summary</h2>
+      <iron-ajax
+        auto
+        url="blog/blog.json"
+        handle-as="json"
+        on-response="handleCall"
+        last-reponse="{{ajaxResponse}}"
+        debounce-duration="300"></iron-ajax>
+
+    <p>[[ajaxResponse.test.title]]</p>
+
+  </template>
+      <!--<script
+        src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   
+        integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   
+        crossorigin="anonymous"></script>-->
+
+  <script>
+    Polymer({
+      is: 'blog-summary',
+      handleCall: function(response) {
+          console.log(response);
+      }
+      /*ready: function() {
+        var _self = this;
+        $.get('/src/blog/blog.json',function(data){
+            _self.posts = $.parseJSON(data).results;
+            });
+        }*/
+    });
+
+  </script>
+</dom-module>
