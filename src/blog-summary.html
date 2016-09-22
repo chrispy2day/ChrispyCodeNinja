@@ -5,20 +5,32 @@
 
 <dom-module id="blog-summary">
   <template>
-      <style>
+      <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
 
-      </style>
-
-      <h2>Blog Summary</h2>
       <iron-ajax
+        id="requestor"
         auto
-        url="blog/blog.json"
+        url="/src/blog/blog.json"
         handle-as="json"
         on-response="handleCall"
-        last-reponse="{{ajaxResponse}}"
         debounce-duration="300"></iron-ajax>
 
-    <p>[[ajaxResponse.test.title]]</p>
+    <section>
+      <template is="dom-repeat" items="[[posts]]" as="post">
+        <div class="card">
+          <article>
+            <h1>[[post.title]]</h1>
+            <p><small>By [[post.author]]</small></p>
+            <p>[[post.description]]</p>
+          </article>
+        </div>
+      </template>
+    </section>
 
   </template>
       <!--<script
@@ -29,8 +41,20 @@
   <script>
     Polymer({
       is: 'blog-summary',
-      handleCall: function(response) {
-          console.log(response);
+      properties: {
+        posts: {
+          type: Array,
+          notify: true,
+          value: function () { return []; } // Default value
+        }
+      },
+      handleCall: function() {
+        var res = this.$.requestor.lastResponse;
+        console.log(res);
+        var _self = this;
+        Object.keys(res).forEach(function(key) {
+            _self.push('posts', res[key]);
+        });
       }
       /*ready: function() {
         var _self = this;
