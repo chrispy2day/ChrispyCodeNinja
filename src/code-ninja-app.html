@@ -136,7 +136,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                      attr-for-selected='name'
                      entry-animation='slide-from-right-animation'
                      exit-animation='slide-left-animation'>
-      <neon-animatable name='my-view1'><my-view1></my-view1></neon-animatable>
+      <neon-animatable name='ninja-dojo'><ninja-dojo></ninja-dojo></neon-animatable>
       <neon-animatable name='my-view2'><my-view2></my-view2></neon-animatable>
       <neon-animatable name='blog-summary'><blog-summary></blog-summary></neon-animatable>
       <neon-animatable name='my-view404'><my-view404></my-view404></neon-animatable>
@@ -149,8 +149,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
 
     var navItems = [{
-            name: "my-view1",
-            title: "Home"
+            name: "ninja-dojo",
+            title: "Dojo"
             }, {
             name: "my-view2",
             title: "Bio"
@@ -182,7 +182,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'my-view1';
+        this.page = page || 'ninja-dojo';
       },
 
       _pageChanged: function(page) {

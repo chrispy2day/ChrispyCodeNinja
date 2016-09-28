@@ -3,7 +3,7 @@
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
-<!--<script type="text/javascript" src="../node_modules/jquery/dist/jquery.slim.min.js"></script>-->
+<script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
 
 <dom-module id="blog-summary">
   <template>
@@ -16,6 +16,14 @@
         paper-card {
           width: 500px;
           margin: auto auto;
+        }
+
+        .card-content h1 {
+          margin-bottom: 10px;
+        }
+
+        .card-content .info {
+          margin: 0;
         }
       </style>
 
@@ -32,7 +40,10 @@
         <paper-card image="[[post.image]]">
           <section class="card-content">
             <h1>[[post.title]]</h1>
-            <p><small>By [[post.author]]</small></p>
+            <div class="info layout horizontal">
+              <small class="flex">By [[post.author]]</small>
+              <small>Posted [[friendlyDate(post.createdAt)]]</small>
+            </div>
             <p>[[post.description]]</p>
           </section>
           <div class="card-actions">
@@ -43,10 +54,6 @@
     </section>
 
   </template>
-      <!--<script
-        src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   
-        integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   
-        crossorigin="anonymous"></script>-->
 
   <script>
     Polymer({
@@ -56,22 +63,27 @@
           type: Array,
           notify: true,
           value: function () { return []; } // Default value
+        },
+        limit: {
+          type: Number,
+          notify: false,
+          value: 0
         }
       },
       handleCall: function() {
         var res = this.$.requestor.lastResponse;
-        console.log(res);
+        //console.log(res);
         var _self = this;
-        Object.keys(res).forEach(function(key) {
-            _self.push('posts', res[key]);
-        });
+        // here each key is a blog post
+        var keys = Object.keys(res);
+        // if no limit or limit higher than number of posts, use number of posts
+        var max = (this.limit === 0 || this.limit > keys.length) ? keys.length : this.limit;
+        for (var i = 0; i < max; i++)
+          _self.push('posts', res[keys[i]]);
+      },
+      friendlyDate: function (dateString) {
+        return moment(dateString).format('YYYY-MM-DD')
       }
-      /*ready: function() {
-        var _self = this;
-        $.get('/src/blog/blog.json',function(data){
-            _self.posts = $.parseJSON(data).results;
-            });
-        }*/
     });
 
   </script>
