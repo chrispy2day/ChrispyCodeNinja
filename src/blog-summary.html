@@ -1,17 +1,23 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
 <!--<script type="text/javascript" src="../node_modules/jquery/dist/jquery.slim.min.js"></script>-->
 
 <dom-module id="blog-summary">
   <template>
-      <style include="shared-styles">
-      :host {
-        display: block;
-        padding: 10px;
-      }
-    </style>
+      <style include="iron-flex iron-flex-alignment shared-styles">
+        :host {
+          display: block;
+          padding: 10px;
+        }
+
+        paper-card {
+          width: 500px;
+          margin: auto auto;
+        }
+      </style>
 
       <iron-ajax
         id="requestor"
@@ -21,15 +27,18 @@
         on-response="handleCall"
         debounce-duration="300"></iron-ajax>
 
-    <section>
+    <section class="layout horizontal wrap">
       <template is="dom-repeat" items="[[posts]]" as="post">
-        <div class="card">
-          <article>
+        <paper-card image="[[post.image]]">
+          <section class="card-content">
             <h1>[[post.title]]</h1>
             <p><small>By [[post.author]]</small></p>
             <p>[[post.description]]</p>
-          </article>
-        </div>
+          </section>
+          <div class="card-actions">
+            <paper-button>Full Article</paper-button>
+          </div>
+        </paper-card>
       </template>
     </section>
 
