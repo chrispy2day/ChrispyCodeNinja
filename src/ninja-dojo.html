@@ -9,7 +9,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="blog-summary.html">
 <link rel="import" href="shared-styles.html">
+
 
 <dom-module id="ninja-dojo">
 
@@ -20,13 +24,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
+
+      .container {
+        @apply(--layout-horizontal);
+      }
+
+      .mainContent {
+        @apply(--layout-flex-3);
+        @apply(--layout-wrap);
+        /*background-color: grey;*/
+        margin: 0 10px;
+        padding: 10px;
+      }
+
+      .about {
+        @apply(--layout-flex);
+        /*background-color: yellow;*/
+        padding: 10px;
+      }
     </style>
 
-    <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+    <div class="container">
+      <section class="mainContent">
+        <h1>Latest & Greatest</h1>
+        <blog-summary limit="5"></blog-summary>
+      </section>
+      <section class="about">
+        <paper-card heading="Chris Plowman" image="./trip.png" alt="" class="white">
+          <div class="card-content">
+            <h1>Who is Chrispy Code Ninja?</h1>
+            <p>Hey all, I'm Chris Plowman, AKA the Chrispy Code Ninja.  
+              This blog is home to my tech rants, raves, tutorials, videos, and general ramblings.
+              Hopefully you'll find something interesting, maybe helpful, and if we are all very very lucky, maybe even enlightening.
+              Well, we can hope ;) Welcome!
+            </p>
+          </div>
+          <div class="card-actions">
+            <a href="" tabindex="-1">
+              <paper-icon-button src="" class="fa fa-github fa-lg"></paper-icon-button>
+            </a>
+            <paper-icon-button src="" class="fa fa-linkedin fa-lg"></paper-icon-button>
+            <paper-icon-button src="" class="fa fa-twitter fa-lg"></paper-icon-button>
+          </div>
+        </paper-card>
+      </section>
     </div>
 
   </template>
