@@ -8,7 +8,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="blog-summary.html">
@@ -42,6 +41,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         /*background-color: yellow;*/
         padding: 10px;
       }
+
+      .about paper-card {
+        --paper-card-header-color: white;
+      }
     </style>
 
     <div class="container">
@@ -50,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <blog-summary limit="5"></blog-summary>
       </section>
       <section class="about">
-        <paper-card heading="Chris Plowman" image="./trip.png" alt="" class="white">
+        <paper-card heading="Chris Plowman" image="https://scontent.frir1-1.fna.fbcdn.net/v/t1.0-0/p206x206/13895475_10210153810146821_8292395150888152807_n.jpg?oh=8e957bb918126438a0f7add496ed05a5&oe=58A1B0DA" alt="">
           <div class="card-content">
             <h1>Who is Chrispy Code Ninja?</h1>
             <p>Hey all, I'm Chris Plowman, AKA the Chrispy Code Ninja.  
