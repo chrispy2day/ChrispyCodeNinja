@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xml:lang="en"
+      xml:base="http://chrispycode.ninja">
+  <id>http://chrispycode.ninja/blog/feed.xml</id>
+  <title>Chrispy Code Ninja Feed</title>
+  
+  <updated>2016-09-26T05:09:55.000Z</updated>
+  <link href="/blog" />
+  <link rel="self" href="/blog/feed.xml" />
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/test-post</id>
+      <title>This is only a test</title>
+      <link href="http://chrispycode.ninja/blog/test-post" />
+      <updated>2016-09-26T05:08:56.000Z</updated>
+      <summary>This is a test post.  Nothing to see here.  Move along!  Move along!</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/test-post2</id>
+      <title>This is only a test</title>
+      <link href="http://chrispycode.ninja/blog/test-post2" />
+      <updated>2016-09-26T05:09:55.000Z</updated>
+      <summary>This is another test post.</summary>
+    </entry>
+  
+</feed>

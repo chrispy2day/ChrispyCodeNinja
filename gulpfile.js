@@ -82,7 +82,9 @@ function dependencies() {
 gulp.task('default', gulp.series([
   clean.build,
   marker.cleanBlog,
+  marker.cleanFeed,
   marker.buildBlog,
+  marker.buildFeed,
   project.merge(source, dependencies),
   project.serviceWorker
 ]));
