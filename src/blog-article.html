@@ -22,11 +22,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
+    <app-location route="{{route}}"></app-location>
     <app-route
-        route="{{subroute}}"
-        pattern="/:slug"
-        data="{{articleData}}">
-    </app-route>
+      route="{{route}}"
+      pattern="/:articleSlug"
+      data="{{routeData}}"></app-route>
 
     <iron-ajax
         id="requestor"
@@ -36,12 +36,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         on-response="handleCall"
         debounce-duration="300"></iron-ajax>
 
-    <div class="card">
-      <div class="circle">1</div>
+    <article>
       <h1>[[post.title]]</h1>
-      [[post.body]]
-    </div>
+      <element inner-h-t-m-l="[[post.body]]"></element>
+    </article>
 
+    
   </template>
 
   <script>
@@ -49,23 +49,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'blog-article',
       properties: {
-          post: {
-              type: Object,
-              value: null
-          }
+        post: {
+          type: Object,
+          value: null // Default value
+        }
       },
       handleCall: function() {
         var res = this.$.requestor.lastResponse;
         //console.log(res);
         var _self = this;
-        // here each key is a blog post
-        var keys = Object.keys(res);
-        // get the desired blog post
-        for (var i = 0; i < keys.length; i++) {
-            if (keys[i].slug === articleData.slug) {
-                this.post = keys[i];
-                break;
-            }
+        // try and match the slug
+        for (var i = 0; i < res.posts.length; i++) {
+          if (_self.routeData.articleSlug == res.posts[i].slug) {
+            _self.post = res.posts[i];
+            this.$.content.innerHTML = this['inner-html'];
+            break;
+          }
         }
       },
       friendlyDate: function (dateString) {
