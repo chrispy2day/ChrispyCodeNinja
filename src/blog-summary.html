@@ -24,6 +24,15 @@
         .card-content .info {
           margin: 0;
         }
+
+        .card-actions a {
+          color: #990000;
+          text-decoration: none;
+        }
+
+        .card-actions a:hover {
+          text-decoration: underline;
+        }
       </style>
 
       <iron-ajax
@@ -46,7 +55,7 @@
             <p>[[post.description]]</p>
           </section>
           <div class="card-actions">
-            <paper-button>Full Article</paper-button>
+            <a href="/blog-article/[[post.slug]]">Full Article</a>
           </div>
         </paper-card>
       </template>
@@ -73,12 +82,10 @@
         var res = this.$.requestor.lastResponse;
         //console.log(res);
         var _self = this;
-        // here each key is a blog post
-        var keys = Object.keys(res);
         // if no limit or limit higher than number of posts, use number of posts
-        var max = (this.limit === 0 || this.limit > keys.length) ? keys.length : this.limit;
+        var max = (this.limit === 0 || this.limit > res.posts.length) ? res.posts.length : this.limit;
         for (var i = 0; i < max; i++)
-          _self.push('posts', res[keys[i]]);
+          _self.push('posts', res.posts[i]);
       },
       friendlyDate: function (dateString) {
         return moment(dateString).format('YYYY-MM-DD')
