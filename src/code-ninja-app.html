@@ -90,6 +90,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         overflow-y: auto;
       }
 
+      /* This was added to fix hidden not hiding in Chrome */
+      [hidden] { 
+        display: none; 
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -143,7 +148,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <neon-animatable name='my-view404'><my-view404></my-view404></neon-animatable>
     </neon-animated-pages>
 
-    <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
+    <iron-media-query query="min-width: 700px" query-matches="{{wideLayout}}"></iron-media-query>
 
   </template>
 
