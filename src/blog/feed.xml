@@ -6,7 +6,7 @@
   <id>http://chrispycode.ninja/blog/feed.xml</id>
   <title>Chrispy Code Ninja Feed</title>
   
-  <updated>2016-12-23T01:37:11.000Z</updated>
+  <updated>2017-01-02T02:48:47.000Z</updated>
   <link href="/blog" />
   <link rel="self" href="/blog/feed.xml" />
   
@@ -19,19 +19,11 @@
     </entry>
   
     <entry>
-      <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
-      <title>Recognizing Custom Gestures in Xamarin Forms</title>
-      <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
-      <updated>2015-01-20T00:00:00.000Z</updated>
-      <summary>In this post you will learn how you can use custom renderers in order to react to gestures not natively supported in Xamarin Forms.</summary>
-    </entry>
-  
-    <entry>
-      <id>http://chrispycode.ninja/blog/ordering-unit-tests</id>
-      <title>Ordering NUnit Tests</title>
-      <link href="http://chrispycode.ninja/blog/ordering-unit-tests" />
-      <updated>2014-11-19T00:00:00.000Z</updated>
-      <summary>In this post, Chris shows you how you can run tests in a specified order using NUnit.  While this should not be used for regular unit testing, it is an invaluable technique for your end-to-end testing.</summary>
+      <id>http://chrispycode.ninja/blog/xamarin-recertification</id>
+      <title>Renewing my Xamarin Certification</title>
+      <link href="http://chrispycode.ninja/blog/xamarin-recertification" />
+      <updated>2014-10-27T00:00:00.000Z</updated>
+      <summary>Musings on my troubled experience when renewing my Xamarin certification.</summary>
     </entry>
   
     <entry>
@@ -43,11 +35,19 @@
     </entry>
   
     <entry>
-      <id>http://chrispycode.ninja/blog/xamarin-recertification</id>
-      <title>Renewing my Xamarin Certification</title>
-      <link href="http://chrispycode.ninja/blog/xamarin-recertification" />
-      <updated>2014-10-27T00:00:00.000Z</updated>
-      <summary>Musings on my troubled experience when renewing my Xamarin certification.</summary>
+      <id>http://chrispycode.ninja/blog/ordering-unit-tests</id>
+      <title>Ordering NUnit Tests</title>
+      <link href="http://chrispycode.ninja/blog/ordering-unit-tests" />
+      <updated>2014-11-19T00:00:00.000Z</updated>
+      <summary>In this post, Chris shows you how you can run tests in a specified order using NUnit.  While this should not be used for regular unit testing, it is an invaluable technique for your end-to-end testing.</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
+      <title>Recognizing Custom Gestures in Xamarin Forms</title>
+      <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
+      <updated>2015-01-20T00:00:00.000Z</updated>
+      <summary>In this post you will learn how you can use custom renderers in order to react to gestures not natively supported in Xamarin Forms.</summary>
     </entry>
   
 </feed>

@@ -19,17 +19,32 @@ function cleanBlog() {
     return del('./src/blog/*.json');
 }
 
+function comparePosts(a, b) {
+    var aDate = a.lastUpdatedAt || a.createdAt || a.updatedAt;
+    var bDate = b.lastUpdatedAt || b.createdAt || b.updatedAt;
+    if (aDate < bDate)
+        return -1;
+    if (aDate > bDate)
+        return 1;
+    return 0;
+}
+
 var blog;
 function buildBlog() {
     return gulp.src('./src/blog/*.md')
         .pipe(gutil.buffer())
         .pipe(markdownToJSON(marked, 'blog.json'))
         .pipe(jeditor(function(json) {
+            // this section is used to simplify the json structure
+            // from the default created by markdownToJSON
             blog = { posts: [] };
             var keys = Object.keys(json);
             for (var i = 0; i < keys.length; i++) {
                 blog.posts.push(json[keys[i]]);
             }
+
+            // sort the posts
+            blog.posts.sort(comparePosts);
             return blog;
         }))
         .pipe(gulp.dest('./src/blog/'));
