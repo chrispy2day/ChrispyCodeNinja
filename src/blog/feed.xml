@@ -6,24 +6,48 @@
   <id>http://chrispycode.ninja/blog/feed.xml</id>
   <title>Chrispy Code Ninja Feed</title>
   
-  <updated>2016-09-26T05:09:55.000Z</updated>
+  <updated>2016-12-23T01:37:11.000Z</updated>
   <link href="/blog" />
   <link rel="self" href="/blog/feed.xml" />
   
     <entry>
-      <id>http://chrispycode.ninja/blog/test-post</id>
-      <title>This is only a test</title>
-      <link href="http://chrispycode.ninja/blog/test-post" />
-      <updated>2016-09-26T05:08:56.000Z</updated>
-      <summary>This is a test post.  Nothing to see here.  Move along!  Move along!</summary>
+      <id>http://chrispycode.ninja/blog/apple-iphone6-and-watch</id>
+      <title>Apple&#39;s iPhone 6 and Watch</title>
+      <link href="http://chrispycode.ninja/blog/apple-iphone6-and-watch" />
+      <updated>2014-10-12T00:00:00.000Z</updated>
+      <summary>In this post, Chris shares his reaction to Apple&#39;s announcement of the iPhone 6, iPhone 6+, and Apple Watch.</summary>
     </entry>
   
     <entry>
-      <id>http://chrispycode.ninja/blog/test-post2</id>
-      <title>This is only a test</title>
-      <link href="http://chrispycode.ninja/blog/test-post2" />
-      <updated>2016-09-26T05:09:55.000Z</updated>
-      <summary>This is another test post.</summary>
+      <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
+      <title>Recognizing Custom Gestures in Xamarin Forms</title>
+      <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
+      <updated>2015-01-20T00:00:00.000Z</updated>
+      <summary>In this post you will learn how you can use custom renderers in order to react to gestures not natively supported in Xamarin Forms.</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/ordering-unit-tests</id>
+      <title>Ordering NUnit Tests</title>
+      <link href="http://chrispycode.ninja/blog/ordering-unit-tests" />
+      <updated>2014-11-19T00:00:00.000Z</updated>
+      <summary>In this post, Chris shows you how you can run tests in a specified order using NUnit.  While this should not be used for regular unit testing, it is an invaluable technique for your end-to-end testing.</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/sharepoint-2013-install</id>
+      <title>SharePoint 2013 Farm Install</title>
+      <link href="http://chrispycode.ninja/blog/sharepoint-2013-install" />
+      <updated>2014-11-09T00:00:00.000Z</updated>
+      <summary>In this video tutorial, I walk through performing a simple farm installation of SharePoint 2013.</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/xamarin-recertification</id>
+      <title>Renewing my Xamarin Certification</title>
+      <link href="http://chrispycode.ninja/blog/xamarin-recertification" />
+      <updated>2014-10-27T00:00:00.000Z</updated>
+      <summary>Musings on my troubled experience when renewing my Xamarin certification.</summary>
     </entry>
   
 </feed>

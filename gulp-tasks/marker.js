@@ -1,6 +1,5 @@
 'use strict';
 
-//const through = require('through2');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const del = require('del');

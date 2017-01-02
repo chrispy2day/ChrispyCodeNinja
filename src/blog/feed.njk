@@ -14,7 +14,7 @@
       <id>http://chrispycode.ninja/blog/{{ post.slug }}</id>
       <title>{{ post.title }}</title>
       <link href="http://chrispycode.ninja/blog/{{ post.slug }}" />
-      <updated>{{ post.updatedAt }}</updated>
+      <updated>{{ post.lastUpdatedAt or post.createdAt or post.updatedAt }}</updated>
       <summary>{{ post.description }}</summary>
     </entry>
   {% endfor %}
