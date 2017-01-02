@@ -18,18 +18,18 @@
     "del": "^2.2.1",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-data": "^1.2.1",
-    "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
     "gulp-json-editor": "^2.2.1",
-    "gulp-markdown-to-json": "^1.0.0",
+    "gulp-markdown-to-json": "^1.0.1",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-uglify": "^2.0.0",
     "marked": "^0.3.6",
-    "merge-stream": "^1.0.0",
+    "merge-stream": "^1.0.1",
     "plylog": "^0.4.0",
     "polymer-build": "^0.4.0"
   },
   "dependencies": {
-    "jquery": "^3.1.0"
+    "jquery": "^3.1.1"
   }
 }
