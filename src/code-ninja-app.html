@@ -85,10 +85,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       }
 
-      neon-animated-pages {
-        z-index: -1;
-      }
-
       .drawer-contents {
         height: 100%;
         overflow-y: auto;
@@ -129,28 +125,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button icon="menu" on-tap="toggleDrawer" hidden$="{{wideLayout}}">></paper-icon-button>
             </app-toolbar>
         </app-header>
+
+      <!-- Small screen drawer nav -->
+      <app-drawer id="drawer" align="right" swipe-open hidden$="{{wideLayout}}">
+        <div class="drawer-contents">
+          <template is="dom-repeat" id="menu" items="[[pages]]" as="p">
+            <div><a href="/[[p.name]]" class="link" tabindex="-1">[[p.title]]</a></div>
+          </template>
+        </div>
+      </app-drawer>
+
+      <!-- Animated Content Pages -->
+      <neon-animated-pages selected='[[page]]'
+                      attr-for-selected='name'
+                      entry-animation='slide-from-right-animation'
+                      exit-animation='slide-left-animation'>
+        <neon-animatable name='ninja-dojo'><ninja-dojo></ninja-dojo></neon-animatable>
+        <neon-animatable name='my-view2'><my-view2></my-view2></neon-animatable>
+        <neon-animatable name='blog-summary'><blog-summary></blog-summary></neon-animatable>
+        <neon-animatable name='blog-article'><blog-article route="{{subroute}}"></blog-article></neon-animatable>
+        <neon-animatable name='my-view404'><my-view404></my-view404></neon-animatable>
+      </neon-animated-pages>
+    
     </app-header-layout>
-
-    <!-- Small screen drawer nav -->
-    <app-drawer id="drawer" align="right" swipe-open hidden$="{{wideLayout}}">
-      <div class="drawer-contents">
-        <template is="dom-repeat" id="menu" items="[[pages]]" as="p">
-          <div><a href="/[[p.name]]" class="link" tabindex="-1">[[p.title]]</a></div>
-        </template>
-      </div>
-    </app-drawer>
-
-    <!-- Animated Content Pages -->
-    <neon-animated-pages selected='[[page]]'
-                     attr-for-selected='name'
-                     entry-animation='slide-from-right-animation'
-                     exit-animation='slide-left-animation'>
-      <neon-animatable name='ninja-dojo'><ninja-dojo></ninja-dojo></neon-animatable>
-      <neon-animatable name='my-view2'><my-view2></my-view2></neon-animatable>
-      <neon-animatable name='blog-summary'><blog-summary></blog-summary></neon-animatable>
-      <neon-animatable name='blog-article'><blog-article route="{{subroute}}"></blog-article></neon-animatable>
-      <neon-animatable name='my-view404'><my-view404></my-view404></neon-animatable>
-    </neon-animated-pages>
 
     <iron-media-query query="min-width: 700px" query-matches="{{wideLayout}}"></iron-media-query>
 
