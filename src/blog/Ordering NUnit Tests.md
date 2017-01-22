@@ -11,7 +11,7 @@ image:
 
 Hello all! In this blog post I'm going to shows how you can create ordered tests in NUnit. Now before you start screaming that unit tests should not have any order dependencies, let me assure you that I know and agree wholeheartedly. So why create this project and bother with showing how to do this? Simple: there are other kinds of tests besides unit tests, and they often DO have order dependencies.
 
-or example, if you are running database integration tests, a basic CRUD test might look like this:
+For example, if you are running database integration tests, a basic CRUD test might look like this:
 
 1.  Perform initial get and assure empty.
 2.  Add an item.
@@ -91,7 +91,7 @@ The original post, which I have called Example 1 in the repo, uses NUnit's `Test
     
 Notice that where you would normally be returning data for your test, he's created a lambda expression that provides the test implementation. The source method then just calls this `Test` method for each iteration and since test data is always run in the provided order, you can ensure your tests are run the way you want! Super clever approach and kudos to the author.
 
-![Example 1 successfully ordered test run output](/Images/ForPosts/OrderedNUnitTests/Example1Run.PNG)
+![Example 1 successfully ordered test run output](/images/for-posts/OrderedNUnitTests/Example1Run.PNG)
 
 The next code block from the answers, which I have called Example 2 in the repo, extends this approach to be a little more developer friendly by utilizing an attribute called `OrderedTest` that has a single `int` property to specify the order. This way you can write your test methods as usual and just decorate them with the new attribute to control the order they will run in. Much nicer syntax and I loved the idea. The main bit of code here is again building the list of "data".
 
@@ -127,7 +127,7 @@ The next code block from the answers, which I have called Example 2 in the repo,
     
 As you can see, the author uses reflection and his attribute to pull out the test methods. Pretty smart right?! Yeah, I like this approach and it makes for a very clean class. However, there's a bit of a problem, or at least I viewed it as a problem. His reflection is pulling methods for every class in the assembly, not just the current class. This could end up with you running more tests than you actually thought you were going to. I added in the `Example2b` class in the repo to show this. The image below shows the output when I run tests for the `Example2` class. Notice that the 2b tests were run as well, even though they were out of context.
 
-![Example 2 successfully ordered test run output with unintended tests run as well](/Images/ForPosts/OrderedNUnitTests/Example2Run.PNG)
+![Example 2 successfully ordered test run output with unintended tests run as well](/images/for-posts/OrderedNUnitTests/Example2Run.PNG)
 
 Finally, for Example 3, I put my own spin on the approach making it even easier to use, at least in my opinion, and resolving the issue of running more tests than you might have intended. By pushing this into its own class, your test class can now inherit from `OrderedTestFixture` and be a bit cleaner. I also removed the `Int` class from the code because I felt it was ugly and unnecessary.
 
@@ -166,9 +166,9 @@ Finally, for Example 3, I put my own spin on the approach making it even easier 
     
 As you can see in the screenshot below, you can run tests from 3A or 3B and only the corresponding tests will run.
 
-![Example 3 successfully ordered test run](/Images/ForPosts/OrderedNUnitTests/Example3Run.PNG)
+![Example 3 successfully ordered test run](/images/for-posts/OrderedNUnitTests/Example3Run.PNG)
 
-![Example 3B successfully ordered test run](/Images/ForPosts/OrderedNUnitTests/Example3bRun.PNG)
+![Example 3B successfully ordered test run](/images/for-posts/OrderedNUnitTests/Example3bRun.PNG)
 
 I think this makes for some lovely code and should be pretty easy for you to extend further to fit your needs. For example, you could probably add in some logic to short circuit the tests on an error if you like.
 
