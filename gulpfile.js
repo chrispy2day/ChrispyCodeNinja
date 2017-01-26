@@ -50,6 +50,7 @@ const images = require('./gulp-tasks/images.js');
 const uglify = require('gulp-uglify');
 const project = require('./gulp-tasks/project.js');
 const marker = require('./gulp-tasks/marker.js');
+const ghPagesPublish = require('./gulp-tasks/ghpages-publish.js');
 
 // The source task will split all of your source files into one
 // big ReadableStream. Source files are those in src/** as well as anything
@@ -88,3 +89,15 @@ gulp.task('default', gulp.series([
   project.merge(source, dependencies),
   project.serviceWorker
 ]));
+
+gulp.task('build-publish-gh-pages', function(cb) {
+  runSequence(
+    'default',
+    'publish-gh-pages',
+    cb);
+});
+
+// Deploy to GitHub pages gh-pages branch
+gulp.task('publish-gh-pages', function() {
+  gulp.series([ghPagesPublish.publish]);
+});
