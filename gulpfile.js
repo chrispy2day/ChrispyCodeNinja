@@ -90,12 +90,16 @@ gulp.task('default', gulp.series([
   project.serviceWorker
 ]));
 
-gulp.task('build-publish-gh-pages', function(cb) {
-  runSequence(
-    'default',
-    'publish-gh-pages',
-    cb);
-});
+gulp.task('build-publish-gh-pages', gulp.series([
+  clean.build,
+  marker.cleanBlog,
+  marker.cleanFeed,
+  marker.buildBlog,
+  marker.buildFeed,
+  project.merge(source, dependencies),
+  project.serviceWorker,
+  ghPagesPublish.publish
+]));
 
 // Deploy to GitHub pages gh-pages branch
 gulp.task('publish-gh-pages', function() {
