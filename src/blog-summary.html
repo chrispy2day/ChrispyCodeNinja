@@ -14,7 +14,7 @@
 
         paper-card {
           width: 400px;
-          margin: 5px auto;
+          margin: 10px;
         }
 
         .card-content h1 {
@@ -43,7 +43,7 @@
         on-response="handleCall"
         debounce-duration="300"></iron-ajax>
 
-    <section class="layout horizontal wrap">
+    <section class="layout horizontal start wrap">
       <template is="dom-repeat" items="[[posts]]" as="post">
         <paper-card image="[[post.image]]">
           <section class="card-content">

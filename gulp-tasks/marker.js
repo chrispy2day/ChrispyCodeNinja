@@ -23,9 +23,9 @@ function comparePosts(a, b) {
     var aDate = a.lastUpdatedAt || a.createdAt || a.updatedAt;
     var bDate = b.lastUpdatedAt || b.createdAt || b.updatedAt;
     if (aDate < bDate)
-        return -1;
+        return 1; // normally this would be -1, but want descending order
     if (aDate > bDate)
-        return 1;
+        return -1;
     return 0;
 }
 

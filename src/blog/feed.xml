@@ -6,24 +6,24 @@
   <id>http://chrispycode.ninja/blog/feed.xml</id>
   <title>Chrispy Code Ninja Feed</title>
   
-  <updated>2017-01-02T02:48:47.000Z</updated>
+  <updated>2017-01-02T08:01:43.000Z</updated>
   <link href="/blog" />
   <link rel="self" href="/blog/feed.xml" />
   
     <entry>
-      <id>http://chrispycode.ninja/blog/apple-iphone6-and-watch</id>
-      <title>Apple&#39;s iPhone 6 and Watch</title>
-      <link href="http://chrispycode.ninja/blog/apple-iphone6-and-watch" />
-      <updated>2014-10-12T00:00:00.000Z</updated>
-      <summary>In this post, Chris shares his reaction to Apple&#39;s announcement of the iPhone 6, iPhone 6+, and Apple Watch.</summary>
+      <id>http://chrispycode.ninja/blog/creating-testable-code</id>
+      <title>Creating Testable Code</title>
+      <link href="http://chrispycode.ninja/blog/creating-testable-code" />
+      <updated>2017-1-13</updated>
+      <summary>Architecting code to be testable from the beginning of the project can yield immense cost and time savings down the road.  This posts focuses on why this is the case and how to start implementing testable patterns in your own code.</summary>
     </entry>
   
     <entry>
-      <id>http://chrispycode.ninja/blog/xamarin-recertification</id>
-      <title>Renewing my Xamarin Certification</title>
-      <link href="http://chrispycode.ninja/blog/xamarin-recertification" />
-      <updated>2014-10-27T00:00:00.000Z</updated>
-      <summary>Musings on my troubled experience when renewing my Xamarin certification.</summary>
+      <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
+      <title>Recognizing Custom Gestures in Xamarin Forms</title>
+      <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
+      <updated>2015-01-20T00:00:00.000Z</updated>
+      <summary>In this post you will learn how you can use custom renderers in order to react to gestures not natively supported in Xamarin Forms.</summary>
     </entry>
   
     <entry>
@@ -35,11 +35,19 @@
     </entry>
   
     <entry>
-      <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
-      <title>Recognizing Custom Gestures in Xamarin Forms</title>
-      <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
-      <updated>2015-01-20T00:00:00.000Z</updated>
-      <summary>In this post you will learn how you can use custom renderers in order to react to gestures not natively supported in Xamarin Forms.</summary>
+      <id>http://chrispycode.ninja/blog/xamarin-recertification</id>
+      <title>Renewing my Xamarin Certification</title>
+      <link href="http://chrispycode.ninja/blog/xamarin-recertification" />
+      <updated>2014-10-27T00:00:00.000Z</updated>
+      <summary>Musings on my troubled experience when renewing my Xamarin certification.</summary>
+    </entry>
+  
+    <entry>
+      <id>http://chrispycode.ninja/blog/apple-iphone6-and-watch</id>
+      <title>Apple&#39;s iPhone 6 and Watch</title>
+      <link href="http://chrispycode.ninja/blog/apple-iphone6-and-watch" />
+      <updated>2014-10-12T00:00:00.000Z</updated>
+      <summary>In this post, Chris shares his reaction to Apple&#39;s announcement of the iPhone 6, iPhone 6+, and Apple Watch.</summary>
     </entry>
   
 </feed>
