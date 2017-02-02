@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-location route="{{route}}"></app-location>
     <app-route
       route="{{route}}"
-      pattern="/:articleSlug"
+      pattern="/blog-article/:articleSlug"
       data="{{routeData}}"></app-route>
 
     <iron-ajax
@@ -50,20 +50,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'blog-article',
       properties: {
+        posts: {
+          type: Array,
+          notify: true,
+          value: function () { return []; } // Default value
+        },
         post: {
           type: Object,
           value: null // Default value
         }
       },
+      observers: [
+        'setMatchingPost(posts, routeData.articleSlug)'
+      ],
+      _routeChanged: function(changeRecord) {
+        this.setMatchingPost();
+      },
       handleCall: function() {
         var res = this.$.requestor.lastResponse;
         //console.log(res);
         var _self = this;
+        _self.posts = res.posts;
+      },
+      setMatchingPost: function (posts, slug) {
+         console.log('trying to match post ' + slug);
+       
         // try and match the slug
-        for (var i = 0; i < res.posts.length; i++) {
-          if (_self.routeData.articleSlug == res.posts[i].slug) {
-            _self.post = res.posts[i];
-            this.$.content.innerHTML = this['inner-html'];
+        for (var i = 0; i < posts.length; i++) {
+          if (slug == posts[i].slug) {
+            this.post = posts[i];
+            //this.$.content.innerHTML = this['inner-html'];
             break;
           }
         }
