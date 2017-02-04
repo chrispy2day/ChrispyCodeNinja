@@ -9,9 +9,10 @@
  */
 module.exports = {
   staticFileGlobs: [
-    '/index.html',
-    '/manifest.json',
-    '/bower_components/webcomponentsjs/webcomponents-lite.min.js'
+    '/ChrispyCodeNinja/index.html',
+    '/ChrispyCodeNinja/manifest.json',
+    '/ChrispyCodeNinja/bower_components/webcomponentsjs/webcomponents-lite.min.js'
   ],
-  navigateFallback: '/index.html'
+  navigateFallback: '/ChrispyCodeNinja/index.html',
+  replacePrefix: '/ChrispyCodeNinja'
 };
