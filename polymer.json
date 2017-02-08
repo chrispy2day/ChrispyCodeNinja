@@ -2,6 +2,9 @@
   "entrypoint": "index.html",
   "shell": "src/code-ninja-app.html",
   "fragments": [
+    "src/blog-article.html",
+    "src/blog-summary.html",
+    "src/ninja-dojo.html",
     "src/my-view1.html",
     "src/my-view2.html",
     "src/my-view3.html",
