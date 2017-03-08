@@ -19,6 +19,14 @@
     </entry>
   
     <entry>
+      <id>http://chrispycode.ninja/blog/</id>
+      <title>The Legend of Chrispy Code Ninja</title>
+      <link href="http://chrispycode.ninja/blog/" />
+      <updated>2017-03-08T15:24:47.000Z</updated>
+      <summary></summary>
+    </entry>
+  
+    <entry>
       <id>http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms</id>
       <title>Recognizing Custom Gestures in Xamarin Forms</title>
       <link href="http://chrispycode.ninja/blog/recognizing-custom-gestures-in-xamarin-forms" />
