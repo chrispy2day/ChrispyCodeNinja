@@ -14,6 +14,7 @@ Hello again all! Sorry for the delay in my posting activity; things have been a 
 So this post is going to be all about recognizing gestures in Xamarin Forms, which is something that most apps with any sort of interesting user interface are going to have to tackle. Unfortunately, for now the Xamarin team only gives us out-of-the-box support for the tap gesture, which is great, but not enough. So, I have created [a simple project on GitHub](https://github.com/JC-Chris/Xamarin-Gestures-Demo) to show how you can listen and respond to your own custom gestures. For the demo I'm using swipes in all directions, but you can follow this same approach to respond to whatever gestures you need to.
 
 Here are the screenshots of the demo app running on all platforms:
+
 ![Android Screenshot](/images/for-posts/XamarinFormsGestures/androidGesture.gif)
 ![iOS Screenshot](/images/for-posts/XamarinFormsGestures/iosGesture.gif)
 ![Windows Phone Screenshot](/images/for-posts/XamarinFormsGestures/windowsGesture.gif)
