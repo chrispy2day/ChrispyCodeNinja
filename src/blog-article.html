@@ -8,6 +8,8 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
 <link rel="import" href="shared-styles.html">
 <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
 
@@ -19,6 +21,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
         padding: 10px;
+      }
+
+      .header {
+        height: 300px;
+        background-size: cover;
+        @apply(--layout-horizontal);
+        @apply(--layout-end);
+      }
+
+      h1 {
+        padding-left: 20px;
       }
     </style>
 
@@ -37,7 +50,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div class="card">
       <article>
-        <h1>[[post.title]]</h1>
+        <div class="header" style="background-image: url([[post.image]])">
+          <h1 style="color: [[post.headerTextColor]]">[[post.title]]</h1>
+        </div>
         <element inner-h-t-m-l="[[post.body]]"></element>
       </article>
     </div>

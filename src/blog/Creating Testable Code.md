@@ -5,7 +5,8 @@ description: Architecting code to be testable from the beginning of the project 
 createdAt: 2017-1-13
 author: Chris Plowman
 tags: Testing, Dependency Injection, Inversion of Control
-image: 
+image: /images/for-posts/testableCodeBgnd.jpg
+headerTextColor: white
 
 ---
 
