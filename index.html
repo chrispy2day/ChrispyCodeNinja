@@ -114,6 +114,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body>
     <code-ninja-app></code-ninja-app>
+    <div id="masterCommentHider" style="display: none">
+      <div id="disqus_thread"></div>
+    </div>
+
+    <script>
+      /* Begin Disqus Stuff */
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'chrispy-code-ninja';
+      var disqus_identifier = 'tempid1';
+      var disqus_url = 'https://chrispycode.ninja';
+      var disqus_config = function () { 
+        this.language = "en";
+      };
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      /* * * Disqus Reset Function * * */
+      var reset = function (slug, newTitle) {
+        if (DISQUS === undefined) {
+          window.setTimeout(function() { reset(slug, newTitle); }, 100);
+          return;
+        }
+
+        // always ensure the expected disqus_thread element exists
+        document.getElementById('masterCommentHider').innerHTML = '<div id="disqus_thread"></div>';
+        // reset the comments
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = slug;
+                this.page.url = 'https://chrispycode.ninja/blog-article/' + slug;
+                this.page.title = newTitle;
+            }
+        });
+      }
+      /* End Disqus Stuff */
+    </script>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>

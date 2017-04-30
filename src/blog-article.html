@@ -55,6 +55,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <element inner-h-t-m-l="[[post.body]]"></element>
       </article>
+      <div id="comments"></div>
     </div>
     
   </template>
@@ -94,6 +95,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this.post = posts[i];
             break;
           }
+        }
+
+        // load the comments
+        if (this.post) {
+          reset(slug, this.post.title);
+          var clone = document.getElementById('disqus_thread');
+          this.$.comments.appendChild(clone);
         }
       },
       friendlyDate: function (dateString) {
