@@ -18,6 +18,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
 
+    <!-- Get Font Awesome to work by re-including it per module -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style include="shared-styles">
       :host {
         display: block;
@@ -54,11 +57,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .card-actions a:hover{
         color: #990000;
       }
+
+      h1 a {
+        padding-left: 10px;
+        text-decoration: none;
+        font-size: .75em;
+        color: #990000;
+      }
+
+      h1 a:hover {
+        text-decoration: underline;
+      }
     </style>
+
 
     <div class="container">
       <section class="mainContent">
-        <h1>Latest & Greatest</h1>
+        <h1>Latest & Greatest
+          <a type="application/atom+xml" href="https://chrispycode.ninja/src/blog/feed.xml" tabindex="-1" target="_blank">
+            <i class="fa fa-rss" aria-hidden="true"></i> Feed Me!
+          </a>
+        </h1>
         <blog-summary limit="5"></blog-summary>
       </section>
       <section class="about">
