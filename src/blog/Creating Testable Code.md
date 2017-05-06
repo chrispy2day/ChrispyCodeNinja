@@ -2,7 +2,7 @@
 slug: creating-testable-code
 title: Creating Testable Code
 description: Architecting code to be testable from the beginning of the project can yield immense cost and time savings down the road.  This posts focuses on why this is the case and how to start implementing testable patterns in your own code.
-createdAt: 2017-1-13
+createdAt: 2017-01-13
 author: Chris Plowman
 tags: Testing, Dependency Injection, Inversion of Control
 image: /images/for-posts/testableCodeBgnd.jpg

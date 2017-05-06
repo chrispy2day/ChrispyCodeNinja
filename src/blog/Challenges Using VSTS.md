@@ -1,3 +1,15 @@
+---
+slug: challenges-using-VSTS
+title: Challenges using VSTS
+description: Some of the problems I've faced trying to use VSTS to manage my agile projects.
+createdAt: 2017-05-05
+author: Chris Plowman
+tags: Tools
+image: 
+
+---
+
+
 # Challenges using VSTS
 
 ## Poor UI

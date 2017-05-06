@@ -2,7 +2,7 @@
 slug: NetCore-to-GCP-AppFlex
 title: .Net Core to GCP App Engine Flex
 description: This posts walks you through deploying a .Net Core app to Google Cloud Platform's App Engine Flexible environment.  
-createdAt: 2017-3-17
+createdAt: 2017-03-17
 author: Chris Plowman
 tags: .Net Core, Cloud
 image: 
