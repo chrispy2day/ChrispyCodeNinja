@@ -2,11 +2,12 @@
 slug: creating-testable-code
 title: Creating Testable Code
 description: Architecting code to be testable from the beginning of the project can yield immense cost and time savings down the road.  This posts focuses on why this is the case and how to start implementing testable patterns in your own code.
-createdAt: 2017-01-13
+createdAt: 2017-06-28
 author: Chris Plowman
 tags: Testing, Dependency Injection, Inversion of Control
 image: /images/for-posts/testableCodeBgnd.jpg
 headerTextColor: white
+backgroundColor: transparent
 
 ---
 
@@ -16,6 +17,19 @@ Take a second and think about the bugs that have been the hardest for you to tra
 
 That was awful.  It doesn't have to be that way.  It *shouldn't* be that way.  And if you spend a little time upfront thinking about testability in your architecture, it won't be that way.
 
-The first step in squashing that pesky bug is identifying where you need to look.  Stepping through a debugger is one way to do this, but that's manual, it's slow, and it's prone to mistakes (crap, just stepped over the method I meant to step into -- start over...grrr), so let's make that a last resort instead of the first one.  If we can write one or more test cases that can exhibit the bug, not only can we identify where we need to focus our attention, but also have an automated regression test to ensure it never rears it's ugly head again!
+## Testing Mindset
+I think the first, and most critical, step in creating testable code is changing your mindset.  If you think about how you are going to test your code after it's written you're in for a frustrating experience.  When trying to get something to work as quickly as possible, we often create dependencies on other objects that may have problems of their own or overlook possible error conditions like connectivity problems.  This will make it very difficult to create tests to verify expected behaior even in these non-ideal scenarios.  If we instead approach each method with testability in mind, we will be looking for areas that may cause problems and not only write the code to properly handle these cases, but also look for ways to be able to test these edge conditions.  Let's look at a single example to illustrate what I'm talking about.
 
-	Note that this architecture support TDD & BDD
+*Code for API call*
+
+Problems: network issues or other request errors, dependency on settings, etc
+
+Talk about IoC / Dependency Injection as a way to facilitate testing
+
+*Code reworked with DI for settings*
+
+Mocking objects for test cases
+
+*Testing code with Moq*
+
+Test-first / Behavior Driven Development talk

@@ -1,11 +1,13 @@
 ---
 slug: ordering-unit-tests
-title: Ordering NUnit Tests
+title: Ordering NUnit Tests 
 description: In this post, Chris shows you how you can run tests in a specified order using NUnit.  While this should not be used for regular unit testing, it is an invaluable technique for your end-to-end testing.
 createdAt: 2014-11-19
 author: Chris Plowman
 tags: Testing, NUnit
-image: 
+image: /images/for-posts/numbering.jpg
+headerTextColor: white
+backgroundColor: rgba(0,0,0,.5)
 
 ---
 

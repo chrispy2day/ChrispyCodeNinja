@@ -20,7 +20,8 @@
     "paper-tabs": "PolymerElements/paper-tabs#^1.6.2",
     "iron-ajax": "PolymerElements/iron-ajax#^1.4.3",
     "paper-card": "PolymerElements/paper-card#^1.1.2",
-    "moment": "^2.15.1"
+    "moment": "^2.15.1",
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#^2.0.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

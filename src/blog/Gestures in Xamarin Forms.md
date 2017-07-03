@@ -5,7 +5,9 @@ description: In this post you will learn how you can use custom renderers in ord
 createdAt: 2015-01-20
 author: Chris Plowman
 tags: xamarin forms, custom renderers
-image: 
+image: /images/for-posts/phone-gestures.jpg
+headerTextColor: black
+backgroundColor: transparent
 
 ---
 
@@ -19,7 +21,9 @@ Here are the screenshots of the demo app running on all platforms:
 ![iOS Screenshot](/images/for-posts/XamarinFormsGestures/iosGesture.gif)
 ![Windows Phone Screenshot](/images/for-posts/XamarinFormsGestures/windowsGesture.gif)
 	
-The magic of this comes from utilizing custom renderers and then leveraging the platform's native features in each specific project. Figuring out each platform was a little tricky, but thankfully I got some help from [Rob Gibbens posts](http://arteksoftware.com/gesture-recognizers-with-xamarin-forms/) as well as [this GitHub project](https://github.com/tkowalczyk/SimpleCustomGestureFrame). Alas, both of those only tackled iOS and Android, so I actually had to do some real work for Window Phone, but thankfully it wasn't too bad.As I mention in the project's ReadMe, you can extend whatever control makes sense for your implementation, but I used a simple `ContentView`. It didn't look like the renderer for this actually created a native component in Windows Phone, so you'll see I created and injected my own control that I use to listen to the gestures. Otherwise, I think the code should be fairly straightforward, so please take a look at the repo and enjoy!
+The magic of this comes from utilizing custom renderers and then leveraging the platform's native features in each specific project. Figuring out each platform was a little tricky, but thankfully I got some help from [Rob Gibbens posts](http://arteksoftware.com/gesture-recognizers-with-xamarin-forms/) as well as [this GitHub project](https://github.com/tkowalczyk/SimpleCustomGestureFrame). Alas, both of those only tackled iOS and Android, so I actually had to do some real work for Window Phone, but thankfully it wasn't too bad.
+
+As I mention in the project's ReadMe, you can extend whatever control makes sense for your implementation, but I used a simple `ContentView`. It didn't look like the renderer for this actually created a native component in Windows Phone, so you'll see I created and injected my own control that I use to listen to the gestures. Otherwise, I think the code should be fairly straightforward, so please take a look at the repo and enjoy!
 
 Happy Coding!
 

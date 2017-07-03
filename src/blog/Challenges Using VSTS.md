@@ -5,12 +5,14 @@ description: Some of the problems I've faced trying to use VSTS to manage my agi
 createdAt: 2017-05-05
 author: Chris Plowman
 tags: Tools
-image: 
+image: /images/for-posts/startup-photos.jpg
+headerTextColor: white
+backgroundColor: rgba(0,0,0,.5)
 
 ---
 
 
-# Challenges using VSTS
+# Challenges using VSTS 
 
 ## Poor UI
 

@@ -5,7 +5,9 @@ description: In this post, Chris shares his reaction to Apple's announcement of 
 createdAt: 2014-10-12
 author: Chris Plowman
 tags: gear reviews, general
-image: 
+image: /images/for-posts/iphone-6-apple-watch.png
+headerTextColor: white
+backgroundColor: rgba(0,0,0,.5)
 
 ---
 

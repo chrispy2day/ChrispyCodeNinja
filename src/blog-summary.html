@@ -15,9 +15,25 @@
           padding: 10px;
         }
 
-        paper-card {
-          width: 400px;
-          margin: 10px;
+        @media screen and (min-width: 900px) {
+          paper-card {
+            width: 30%;
+            margin: 10px;
+          }
+        }
+
+        @media screen and (min-width: 600px) and (max-width:899px) {
+          paper-card {
+            width: 45%;
+            margin: 10px;
+          }
+        }
+
+        @media screen and (max-width:599px) {
+          paper-card {
+            width: 100%;
+            margin: 10px;
+          }
         }
 
         .card-content h1 {

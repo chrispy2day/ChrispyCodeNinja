@@ -5,7 +5,9 @@ description: Musings on my troubled experience when renewing my Xamarin certific
 createdAt: 2014-10-27
 author: Chris Plowman
 tags: general, xamarin
-image: 
+image: /images/for-posts/certify.jpg
+headerTextColor: white
+backgroundColor: rgba(0,0,0,.5)
 
 ---
 

@@ -5,7 +5,9 @@ description: This posts walks you through deploying a .Net Core app to Google Cl
 createdAt: 2017-03-17
 author: Chris Plowman
 tags: .Net Core, Cloud
-image: 
+image: /images/for-posts/cloud.jpg
+headerTextColor: black
+backgroundColor: transparent
 
 ---
 
