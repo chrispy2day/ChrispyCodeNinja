@@ -11,10 +11,10 @@
   <link rel="self" href="https://chrispycode.ninja/src/blog/feed.xml" />
   {% for post in posts %}
     <entry>
-      <id>http://chrispycode.ninja/blog/{{ post.slug }}</id>
+      <id>http://chrispycode.ninja/blog-article/{{ post.slug }}</id>
       <title>{{ post.title }}</title>
       <author><name>{{ post.author }}</name></author>
-      <link rel="alternate" href="http://chrispycode.ninja/blog/{{ post.slug }}" />
+      <link rel="alternate" href="http://chrispycode.ninja/blog-article/{{ post.slug }}" />
       <updated>{{ post.lastUpdatedAt or post.createdAt or post.updatedAt }}</updated>
       <summary>{{ post.description }}</summary>
     </entry>
