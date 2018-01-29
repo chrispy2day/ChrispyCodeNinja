@@ -2,7 +2,7 @@
 slug: gcp-dotnet-part1
 title: Running .NET on GCP Series Overview
 description: In this first post on running .NET workloads on GCP, I'll provide an overview of what we will cover throughout this series and a tour of the portal.
-createdAt: 2018-01-25
+createdAt: 2018-01-29
 author: Chris Plowman
 tags: GCP, .NET, IaaS, .NET Core
 image: /images/for-posts/cloud2.jpg
