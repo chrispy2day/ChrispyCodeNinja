@@ -1,6 +1,6 @@
 ---
 slug: gcp-dotnet-part1
-title: Running .NET on GCP Series Overview
+title: Running .NET on GCP, Series Overview
 description: In this first post on running .NET workloads on GCP, I'll provide an overview of what we will cover throughout this series and a tour of the portal.
 createdAt: 2018-01-29
 author: Chris Plowman
@@ -28,6 +28,8 @@ In the final video for this first post, I'll give you an overview of the app we 
 
 [![Demo Application Overview](/images/for-posts/GCPSeries1/appOverview.png)](https://youtu.be/UzR-lKk8sJw)
 
-In the next post I'll start off the journey of moving this app up to GCP.  Stay tuned!
+In the next post, I'll start off the journey of moving this app up to GCP.  Stay tuned!
 
 In the meantime, happy coding!
+
+[Part 2: Migration to GCE](https://chrispycode.ninja/blog-article/gcp-dotnet-part2) is now available!
