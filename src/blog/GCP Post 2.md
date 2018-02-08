@@ -23,3 +23,5 @@ You can follow along by pulling the code from [this GitHub repo](https://github.
 In the next post, we'll start looking at how we can leverage Platform as a Service (PaaS) offerings in GCP to take more advantage of the benefits of the cloud.  Stay tuned!
 
 In the meantime, happy coding!
+
+[Part 3: Benefits of Managed Services](https://chrispycode.ninja/blog-article/gcp-dotnet-part3) is now available!

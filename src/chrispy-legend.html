@@ -28,13 +28,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       img {
         margin-left: 20px;
+        max-width: 40%;
+        float: right;
+      }
+
+      .clearfix:after {
+          content:"";
+          display:block;
+          clear:both;
       }
     </style>
 
-    <div class="card">
+    <div class="card clearfix">
       <h1 id="thelegendofchrispycodeninja">The Legend of Chrispy Code Ninja</h1>
+      <img src="/images/profilePic.jpg" alt="Photo of Chris Plowman" />
       <p>
-        <img src="/images/profilePic.jpg" alt="Photo of Chris Plowman" align="right" />
         Hi all, my name is Chris Plowman, AKA Chrispy. 
         I&apos;ve been working in software development for my whole adult life (and far too much of my youth!) 
         starting as a dev and advancing through the ranks as a senior dev, team leader, and architect. 
